@@ -21,15 +21,15 @@
 
 <!--2. Удалить все html теги. Вывести количество символов после фильтрации.-->
         <?php
-        $tegsStr ="<div class=\"refnamediv\">
+        $tegStr = '<div class="refnamediv">
             <h1>htmlspecialchars</h1>
             <p> (PHP 4, PHP 5, PHP 7)</p>
-            <p class=\"refpurpose\">
-                <span class=\"refname\">htmlspecialchars</span>
-                <span class=\"dc-title\">Любой текст</span>
+            <p class="refpurpose">
+                <span class="refname">htmlspecialchars</span>
+                <span class="dc-title">Любой текст</span>
             </p>
-        </div>";
-        echo "Количество символов после удаления тегов = ".strlen(strip_tags($tegsStr))."<br>";
+        </div>';
+        echo "Количество символов после удаления тегов = ".strlen(strip_tags($tegStr));
         ?>
 
 <!--3. Найти и заменить в строке "http://example.com/user/username" user на author;
@@ -38,7 +38,8 @@
     $strHttp = "http://example.com/user/username";
     $substr = "user";
     $substring = "author";
-    //var_dump($index = strpos($strHttp, $substr));
+    $index = strpos($strHttp, $substr);
+    echo "<br>";
     echo substr_replace($strHttp, $substring, $index, strlen($substr))."<br>";
 ?>
 
@@ -74,7 +75,6 @@
     print_r ($arrUrl);
     echo "<br>";
     //$arrData = parse_str($strUrl[path], $resultArr);
-
     $resultArr = parse_str($strUrl[2],$resultArr);
     echo $resultArr['name'];
     echo $resultArr['lastname'];
